@@ -264,18 +264,20 @@ pauseButton.addEventListener('click', () => {
   }), '*');
 });
 
-// Event listener for mute button
-muteButton.addEventListener('click', () => {
-  setVolume(0);
-  soundbar.value = 0;
-  muteButton.style.display = 'none';
-  unmuteButton.style.display = 'inline-block';
-});
 
-// Event listener for unmute button
-unmuteButton.addEventListener('click', () => {
-  setVolume(50);
-  soundbar.value = 50;
-  muteButton.style.display = 'inline-block';
-  unmuteButton.style.display = 'none';
+// Event listener for toggle button
+toggleButton.addEventListener('click', () => {
+  if (toggleButton.classList.contains('muted')) {
+    // If currently muted, unmute
+    setVolume(50);
+    soundbar.value = 50;
+    toggleButton.classList.remove('muted');
+    toggleButton.innerText = 'Mute';
+  } else {
+    // If currently unmuted, mute
+    setVolume(0);
+    soundbar.value = 0;
+    toggleButton.classList.add('muted');
+    toggleButton.innerText = 'Unmute';
+  }
 });
