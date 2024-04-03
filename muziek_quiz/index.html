@@ -9,6 +9,7 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/MusicStyle.css">
   <title>Music quiz</title>
 </head>
 
@@ -86,14 +87,21 @@
     </div>
     <br>
 
-    <iframe id="video" src="https://www.youtube.com/embed/y3Q2fRqLlFk?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="soundbar-container">
-      <input type="range" class="soundbar" min="0" max="100" value="100" step="1">
-      <button id="playButton"><i class="fas fa-play"></i> Play</button>
-      <button id="pauseButton"><i class="fas fa-pause"></i> Pause</button>
-      <button id="toggleButton"> <i class="fas fa-mute"></i> Mute</button>
+
+    <div class="video-container">
+      <div class="iframe-wrapper">
+        <iframe id="video" src="https://www.youtube.com/embed/y3Q2fRqLlFk?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <br> <br>
+      <div class="soundbar-container">
+        <input type="range" class="soundbar" min="0" max="100" value="100" step="1">
+        <button id="playButton"><i class="fas fa-play"></i></button>
+        <button id="pauseButton"><i class="fas fa-pause"></i></button>
+        <button id="toggleButton"><i class="fas fa-volume-up"></i></button>
+      </div>
     </div>
 
+    
   </div>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="src/javascript/BackgroundScript.js"></script>

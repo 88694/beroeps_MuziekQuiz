@@ -265,6 +265,8 @@ pauseButton.addEventListener('click', () => {
 });
 
 
+
+
 // Event listener for toggle button
 toggleButton.addEventListener('click', () => {
   if (toggleButton.classList.contains('muted')) {
