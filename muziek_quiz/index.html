@@ -84,7 +84,19 @@
       </div>
       <button class="btn restart">Restart Quiz</button>
     </div>
+    <br>
+
+    <iframe id="video" src="https://www.youtube.com/embed/y3Q2fRqLlFk?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="soundbar-container">
+      <input type="range" class="soundbar" min="0" max="100" value="100" step="1">
+      <button id="playButton"><i class="fas fa-play"></i> Play</button>
+      <button id="pauseButton"><i class="fas fa-pause"></i> Pause</button>
+      <button id="muteButton"><i class="fas fa-volume-mute"></i> Mute</button>
+      <button id="unmuteButton"><i class="fas fa-volume-up"></i> Unmute</button>
+    </div>
+
   </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="src/javascript/BackgroundScript.js"></script>
   <script src="src/javascript/script.js"></script>
 </body>

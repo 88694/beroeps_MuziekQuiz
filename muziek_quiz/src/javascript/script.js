@@ -213,3 +213,69 @@ const playAdudio = (src) => {
   const audio = new Audio(src);
   audio.play();
 };
+
+
+
+
+//sliders and buttons!
+const video = document.getElementById('video');
+const soundbar = document.querySelector('.soundbar');
+const playButton = document.getElementById('playButton');
+const pauseButton = document.getElementById('pauseButton');
+const muteButton = document.getElementById('muteButton');
+const unmuteButton = document.getElementById('unmuteButton');
+
+// Function to handle volume change
+function setVolume(volume) {
+  video.contentWindow.postMessage(JSON.stringify({
+    event: 'command',
+    func: 'setVolume',
+    args: [volume] // Volume is set between 0 to 100
+  }), '*');
+}
+
+// Event listener for soundbar change
+soundbar.addEventListener('input', () => {
+  const volume = soundbar.value / 100;
+  setVolume(volume * 100);
+
+  if (volume === 0) {
+    muteButton.style.display = 'none';
+    unmuteButton.style.display = 'inline-block';
+  } else {
+    muteButton.style.display = 'inline-block';
+    unmuteButton.style.display = 'none';
+  }
+});
+
+// Event listener for play button
+playButton.addEventListener('click', () => {
+  video.contentWindow.postMessage(JSON.stringify({
+    event: 'command',
+    func: 'playVideo'
+  }), '*');
+});
+
+// Event listener for pause button
+pauseButton.addEventListener('click', () => {
+  video.contentWindow.postMessage(JSON.stringify({
+    event: 'command',
+    func: 'pauseVideo'
+  }), '*');
+});
+
+// Event listener for mute button
+muteButton.addEventListener('click', () => {
+  setVolume(0);
+  soundbar.value = 0;
+  muteButton.style.display = 'none';
+  unmuteButton.style.display = 'inline-block';
+});
+
+// Event listener for unmute button
+unmuteButton.addEventListener('click', () => {
+  setVolume(50);
+  soundbar.value = 50;
+  muteButton.style.display = 'inline-block';
+  unmuteButton.style.display = 'none';
+});

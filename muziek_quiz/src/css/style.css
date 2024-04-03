@@ -221,6 +221,28 @@ select {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.video-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+iframe {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.soundbar-container {
+  margin-top: 20px;
+}
+
+.soundbar {
+  width: 100%;
+}
 
 @media (max-width: 468px) {
   .container {
